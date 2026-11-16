@@ -1,0 +1,18 @@
+on:
+  workflow_dispatch:
+
+jobs:
+  container:
+    runs-on: ubuntu-slim
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v7
+
+    - name: Print out OS release Ubuntu
+      run: cat /etc/os-release
+    
+    - name: Print out OS release Alpine
+      uses: docker://alpine:3.22
+      with:
+        entrypoint: /bin/sh
+        args: -c "cat /etc/os-release"
