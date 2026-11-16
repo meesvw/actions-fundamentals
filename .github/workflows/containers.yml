@@ -61,5 +61,7 @@ jobs:
           git
 
     - name: Run git log
-      shell: bash 
-      run: git log -1
+      shell: bash
+      run: |
+        git config --global --add safe.directory "$GITHUB_WORKSPACE"
+        git log -1
