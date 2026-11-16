@@ -49,9 +49,13 @@ jobs:
     container:
       image: alpine:3.22
     steps:
+    - name: Install dependencies
+      run: |
+        apk add --no-cache bash
+    
     - name: Checkout repository
       uses: actions/checkout@v7
 
-    - name: Run
+    - name: Run git log
       shell: bash 
       run: git log -1
