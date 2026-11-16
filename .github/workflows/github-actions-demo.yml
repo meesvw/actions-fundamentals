@@ -59,7 +59,7 @@ jobs:
     if: ${{inputs.environment == 'Production'}}
     runs-on: ubuntu-26.04
     needs:
-    - build
+    - Test
     - Load-Test
     environment:
       name: Production
