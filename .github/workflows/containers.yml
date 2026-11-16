@@ -49,17 +49,20 @@ jobs:
     container:
       image: alpine:3.22
     steps:
-    - name: Checkout repository
-      uses: actions/checkout@v7
-      with:
-        persist-credentials: false
-    
     - name: Install dependencies
       run: |
         apk add --no-cache \
           bash \
           jq \
           git
+    
+    - name: Checkout repository
+      uses: actions/checkout@v7
+      with:
+        persist-credentials: false
+
+    - name: Show tree
+      run: tree
 
     - name: Run git log
       shell: bash
