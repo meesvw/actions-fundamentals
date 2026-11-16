@@ -1,0 +1,5 @@
+.DS_Store
+
+# Local CodeQL output (supply chain lab)
+codeql-db/
+codeql-results.csv
