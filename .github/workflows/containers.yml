@@ -61,9 +61,6 @@ jobs:
       with:
         persist-credentials: false
 
-    - name: Show tree
-      run: tree
-
     - name: Run git log
       shell: bash
       run: |
