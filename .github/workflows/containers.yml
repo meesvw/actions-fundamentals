@@ -27,7 +27,7 @@ jobs:
       image: node:22-bookworm-slim
     steps:
     - name: Print OS release Node
-      run: cat /ec/os-release
+      run: cat /etc/os-release
     
     - name: Print nodejs version
       run: node -v
