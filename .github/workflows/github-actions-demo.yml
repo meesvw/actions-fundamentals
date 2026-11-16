@@ -1,0 +1,22 @@
+name: GitHub Actions Demo
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  schedule:
+    - cron: '15 6 * * 0'
+
+jobs:
+  build:
+    runs-on: ubuntu-26.04'
+    steps:
+    - name: Print event name
+      run: echo "${GITHUB_EVENT_NAME}"
+    - name: Print current branch
+      run: echo "${GITHUB_REF}"
+    - name: Print all files in repo
+      run: ls
+    
