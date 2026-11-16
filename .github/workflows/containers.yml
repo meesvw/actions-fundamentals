@@ -44,3 +44,14 @@ jobs:
       run: |
         node -e "const s=require('net').connect(6379,'redis',()=>{s.write('PING\r\n')});s.on('data',d=>{console.log(d.toString());s.end()});"
     
+  missing-tools:
+    runs-on: ubuntu-latest
+    container:
+      image: alpine:3.22
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v7
+
+    - name: Run
+      shell: bash 
+      run: git log -1
