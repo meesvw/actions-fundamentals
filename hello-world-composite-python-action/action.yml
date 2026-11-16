@@ -1,0 +1,11 @@
+name: Python-Action
+description: Some Python composite
+
+runs:
+  using: composite
+  steps:
+  - name: Run Python script
+    shell: python
+    run: | 
+      print("Hello world!")
+    
