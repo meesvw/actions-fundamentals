@@ -51,7 +51,9 @@ jobs:
     steps:
     - name: Install dependencies
       run: |
-        apk add --no-cache bash
+        apk add --no-cache \
+          bash \
+          git
     
     - name: Checkout repository
       uses: actions/checkout@v7
